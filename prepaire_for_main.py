@@ -40,10 +40,10 @@ class Data:
             try:
                 with open(f"output_data/{key}.txt", "w", encoding="utf-8") as output_file:
                     output_file.write(str(item))
-                    print(f"Write: {key}.txt. Context: {item}.")
+                    print(f"Write: {key}.txt. Context: {item}. -----{datetime.datetime.now()}")
                 status_result = "Success"
             except FileNotFoundError:
                 FileNotFoundError.strerror
                 status_result = "Error"
             finally:
-                print(f"The end of process with status: {status_result}.")
+                print(f"The end of process with status: {status_result} in {datetime.datetime.now()}.")
